@@ -1,8 +1,12 @@
+<p align="center">
+  <img src="assets/Gemini_Generated_Image_ly72iely72iely72.png" alt="Pirate Orb Logo" width="200"/>
+</p>
+
 # Pirate Orb 🏴‍☠️
 
-Pirate Orb is a comprehensive, containerized media server stack managed with Docker Compose. It includes services for managing and streaming movies, TV shows, and music, all tied together for a seamless automated media experience.
+Pirate Orb is a containerized media server stack managed with Docker Compose (via OrbStack) for MacOS. It includes services for requesting, downloading, and managing movies, TV shows, and music, all tied together for a seamless automated media experience. 
 
-This setup is designed to be run locally, particularly on macOS with [OrbStack](https://orbstack.dev/) providing the Docker environment.
+This is meant to be run with Plex/Jellyfin/Emby, but the actual media server was left out because of the perceived gains in transcoding performance running those servers natively rather than on containerized Linux VM. Simply point those servers to your root movie/tv/music directories. 
 
 ## Services Included
 
@@ -17,10 +21,8 @@ This setup is designed to be run locally, particularly on macOS with [OrbStack](
 
 ### Prerequisites
 
-- **macOS**: This setup is tailored for macOS.
 - **[OrbStack](https://orbstack.dev/)**: Used as the Docker runtime environment. You can also use Docker Desktop, but paths in the AppleScript may need adjustment.
-- **Homebrew** (optional, for `git`): `brew install git`
-- **Usenet Provider & Indexers**: To actually download content, you will need an account with a Usenet provider (e.g., Newshosting, Eweka) and access to Usenet indexers (which you will configure in Prowlarr). These are third-party services that typically require a subscription.
+- **Usenet Provider & Indexers**: To actually download content, you will need an account with a Usenet provider and access to Usenet indexers (which you will configure in Prowlarr). These are third-party services that typically require a subscription.
 
 ### Installation
 
@@ -57,6 +59,8 @@ This setup is designed to be run locally, particularly on macOS with [OrbStack](
 ## 2. Running the Stack
 
 Once your `.env` file is configured, you can start the entire media stack with a single command:
+
+(you may need to run ```orb start``` first)
 
 ```bash
 docker compose up -d
