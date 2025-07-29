@@ -62,4 +62,7 @@ admin/
 !/sonarr/config/config.xml
 
 # Finally, ignore the script itself
-pirate-orb.applescript 
+pirate-orb.applescript
+
+# Ignore user-specific environment variables
+.env

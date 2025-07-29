@@ -1,0 +1,33 @@
+-- Pirate-Orb Control Script
+--
+-- To use this script:
+-- 1. Replace the placeholder "/path/to/your/pirate-orb" with the actual, absolute path to your project directory.
+-- 2. Save this file as an application (File > Export > File Format: Application).
+-- 3. Ensure the "Stay open after run handler" checkbox is checked when exporting.
+
+property stayOpen : true
+
+on run
+	-- Set the path to your pirate-orb project directory
+	set projectPath to "/path/to/your/pirate-orb"
+	
+	-- The full path to the docker executable provided by OrbStack
+	set dockerPath to "/Users/spencer/.orbstack/bin/docker"
+	
+	do shell script "cd " & quoted form of projectPath & " && " & quoted form of dockerPath & " compose up -d"
+	
+	display notification "Pirate-Orb stack started" with title "Pirate-Orb"
+end run
+
+on quit
+	-- Set the path to your pirate-orb project directory
+	set projectPath to "/path/to/your/pirate-orb"
+	
+	-- The full path to the docker executable provided by OrbStack
+	set dockerPath to "/Users/spencer/.orbstack/bin/docker"
+	
+	do shell script "cd " & quoted form of projectPath & " && " & quoted form of dockerPath & " compose down"
+	
+	display notification "Pirate-Orb stack stopped" with title "Pirate-Orb"
+	continue quit
+end quit 
