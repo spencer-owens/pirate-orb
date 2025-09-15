@@ -74,7 +74,24 @@ To stop the stack:
 docker compose down
 ```
 
-## 3. Using the AppleScript (Optional)
+## 3. Updating Services
+
+Since all services use Docker images with the `latest` tag, updating to newer versions is straightforward:
+
+```bash
+# Pull the latest versions of all images
+docker compose pull
+
+# Recreate containers with the new images
+docker compose up -d
+
+# Clean up old, unused images to free disk space
+docker image prune -f
+```
+
+The services will notify you within their web interfaces when updates are available. Your configurations and data are preserved during updates as they're stored in mounted volumes.
+
+## 4. Using the AppleScript (Optional)
 
 For convenience, this repository includes an AppleScript that allows you to start and stop the entire stack as a standalone macOS application.
 
@@ -91,7 +108,7 @@ For convenience, this repository includes an AppleScript that allows you to star
 
 Now you can double-click the app to start your media server stack and quit it from the Dock (`Right-click > Quit`) to shut it down.
 
-## 4. Accessing Services
+## 5. Accessing Services
 
 Once the stack is running, you can access each service in your web browser at the following local addresses:
 
@@ -104,7 +121,7 @@ Once the stack is running, you can access each service in your web browser at th
 
 You will need to go through the initial setup wizard for each of these applications the first time you launch them.
 
-## 5. Post-Installation Configuration
+## 6. Post-Installation Configuration
 
 Getting the services running is the first step. To make them work together as an automated system, you need to configure them to communicate with each other. This usually involves copying API keys from one service and pasting them into another.
 
