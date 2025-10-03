@@ -15,6 +15,7 @@ This is meant to be run with Plex/Jellyfin/Emby, but the actual media server was
 - **Radarr**: Manages your movie collection.
 - **Sonarr**: Manages your TV show collection.
 - **Lidarr**: Manages your music collection.
+- **Whisparr**: Manages your adult video collection.
 - **Jellyseerr**: A request management and media discovery tool for your users.
 
 ## 1. Initial Setup
@@ -53,6 +54,7 @@ This is meant to be run with Plex/Jellyfin/Emby, but the actual media server was
         | `MOVIES_PATH`    | The **absolute path** to your movies library folder.                                                    |
         | `TV_PATH`        | The **absolute path** to your TV shows library folder.                                                  |
         | `MUSIC_PATH`     | The **absolute path** to your music library folder.                                                     |
+        | `ADULT_PATH`     | The **absolute path** to your adult content library folder.                                             |
 
     **This `.env` file is ignored by Git and will not be committed to the repository.**
 
@@ -117,6 +119,7 @@ Once the stack is running, you can access each service in your web browser at th
 -   **Radarr**: http://localhost:7878
 -   **Sonarr**: http://localhost:8989
 -   **Lidarr**: http://localhost:8686
+-   **Whisparr**: http://localhost:6969
 -   **Jellyseerr**: http://localhost:5055
 
 You will need to go through the initial setup wizard for each of these applications the first time you launch them.
@@ -141,9 +144,9 @@ Here is a general workflow to follow:
 2.  Go to `Settings > Indexers` and click the `+` to add your Usenet indexers.
 3.  Go to `Settings > General` to find the **API Key** for Prowlarr.
 
-### C. Configure Radarr, Sonarr, and Lidarr
+### C. Configure Radarr, Sonarr, Lidarr, and Whisparr
 
-The process is nearly identical for all three "*arr*" applications. I'll use Radarr as the main example.
+The process is nearly identical for all "*arr*" applications. I'll use Radarr as the main example.
 
 1.  **Connect to Prowlarr**:
     -   Open Radarr at `http://localhost:7878`.
@@ -160,9 +163,29 @@ The process is nearly identical for all three "*arr*" applications. I'll use Rad
     -   For the `API Key`, paste the SABnzbd API key you copied from its settings.
     -   Test and save. Radarr can now send download requests to SABnzbd.
 
-**Repeat these two steps for Sonarr (`http://localhost:8989`) and Lidarr (`http://localhost:8686`).**
+**Repeat these two steps for Sonarr (`http://localhost:8989`), Lidarr (`http://localhost:8686`), and Whisparr (`http://localhost:6969`).**
 
-### D. Configure Jellyseerr
+### D. Configure Whisparr (Adult Content)
+
+**Note**: Whisparr is specifically designed for adult content management. Configure it similarly to the other *arr apps:
+
+1.  Open Whisparr at `http://localhost:6969`.
+2.  **Connect to Prowlarr** (same as other *arr apps):
+    -   Go to `Settings > Indexers` and click `+`.
+    -   Select **Prowlarr**.
+    -   Prowlarr Server: `http://prowlarr:9696`
+    -   Use your Prowlarr API key.
+3.  **Connect to SABnzbd**:
+    -   Go to `Settings > Download Clients` and click `+`.
+    -   Select **SABnzbd**.
+    -   Host: `sabnzbd`
+    -   Use your SABnzbd API key.
+4.  **Configure Root Folder**:
+    -   Go to `Settings > Media Management`.
+    -   Add root folder: `/adult`
+5.  **Important**: Make sure your adult indexers in Prowlarr have the appropriate adult categories enabled.
+
+### E. Configure Jellyseerr
 
 1.  Open Jellyseerr at `http://localhost:5055`.
 2.  Follow the setup wizard.

@@ -84,3 +84,18 @@ services:
     ports:
       - 5055:5055
     restart: unless-stopped
+
+  whisparr:
+    image: ghcr.io/hotio/whisparr:v3
+    container_name: whisparr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${ADULT_PATH}:/adult
+      - ${DOWNLOADS_PATH}:/downloads
+      - ./whisparr/config:/config
+    ports:
+      - 6969:6969
+    restart: unless-stopped
