@@ -35,6 +35,7 @@ services:
       - TZ=${TZ}
     volumes:
       - ${MOVIES_PATH}:/movies
+      - ${MOVIES_PATH_2}:/movies-leviathan
       - ${DOWNLOADS_PATH}:/downloads
       - ./radarr/config:/config
     ports:
@@ -50,6 +51,7 @@ services:
       - TZ=${TZ}
     volumes:
       - ${TV_PATH}:/tv
+      - ${TV_PATH_2}:/tv-leviathan
       - ${DOWNLOADS_PATH}:/downloads
       - ./sonarr/config:/config
     ports:
@@ -65,6 +67,7 @@ services:
       - TZ=${TZ}
     volumes:
       - ${MUSIC_PATH}:/music
+      - ${MUSIC_PATH_2}:/music-leviathan
       - ${DOWNLOADS_PATH}:/downloads
       - ./lidarr/config:/config
     ports:
@@ -94,8 +97,19 @@ services:
       - TZ=${TZ}
     volumes:
       - ${ADULT_PATH}:/adult
+      - ${ADULT_PATH_2}:/adult-leviathan
       - ${DOWNLOADS_PATH}:/downloads
       - ./whisparr/config:/config
     ports:
       - 6969:6969
+    restart: unless-stopped
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: ngrok
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    command: http --url=jelly-orb.ngrok.app jellyseerr:5055
+    depends_on:
+      - jellyseerr
     restart: unless-stopped
