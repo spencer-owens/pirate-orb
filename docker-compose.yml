@@ -70,6 +70,8 @@ services:
       - ${MUSIC_PATH_2}:/music-leviathan
       - ${DOWNLOADS_PATH}:/downloads
       - ./lidarr/config:/config
+      - ./lidarr/custom-services.d:/custom-services.d
+      - ./lidarr/custom-cont-init.d:/custom-cont-init.d
     ports:
       - 8686:8686
     restart: unless-stopped
@@ -133,6 +135,8 @@ services:
       - 8085:8085  # qBittorrent Web UI (exposed through gluetun)
       - 6881:6881  # qBittorrent torrent port
       - 6881:6881/udp
+      - 5030:5030  # slskd Web UI (exposed through gluetun)
+      - 50300:50300  # slskd Soulseek listen port
     restart: unless-stopped
 
   qbittorrent:
@@ -149,4 +153,61 @@ services:
       - ./qbittorrent/config:/config
     depends_on:
       - gluetun
+    restart: unless-stopped
+
+  slskd:
+    image: slskd/slskd:latest
+    container_name: slskd
+    network_mode: service:gluetun
+    environment:
+      - SLSKD_SLSK_USERNAME=${SLSKD_SLSK_USERNAME}
+      - SLSKD_SLSK_PASSWORD=${SLSKD_SLSK_PASSWORD}
+      - SLSKD_REMOTE_CONFIGURATION=true
+      - SLSKD_DOWNLOADS_DIR=/downloads/complete/soulseek
+      - SLSKD_INCOMPLETE_DIR=/downloads/incomplete/soulseek
+      - SLSKD_SHARED_DIR=/music-leviathan
+      - TZ=${TZ}
+    volumes:
+      - ./slskd/config:/app
+      - ${DOWNLOADS_PATH}:/downloads
+      - ${MUSIC_PATH_2}:/music-leviathan
+    depends_on:
+      - gluetun
+    restart: unless-stopped
+
+  soularr:
+    image: mrusse08/soularr:latest
+    container_name: soularr
+    user: "${PUID}:${PGID}"
+    environment:
+      - TZ=${TZ}
+      - SCRIPT_INTERVAL=120
+    volumes:
+      - ${DOWNLOADS_PATH}:/downloads
+      - ./soularr/config.ini:/data/config.ini
+    depends_on:
+      - lidarr
+      - slskd
+    restart: unless-stopped
+
+  musicseerr:
+    build: ./musicseerr
+    container_name: musicseerr
+    environment:
+      - LIDARR_URL=http://lidarr:8686
+      - LIDARR_API_KEY=${LIDARR_API_KEY}
+    ports:
+      - 3333:3333
+    depends_on:
+      - lidarr
+    restart: unless-stopped
+
+  ngrok-music:
+    image: ngrok/ngrok:latest
+    container_name: ngrok-music
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    command: http --url=music-orb.ngrok.app musicseerr:3333
+    depends_on:
+      - musicseerr
     restart: unless-stopped

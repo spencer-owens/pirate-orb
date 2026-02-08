@@ -329,3 +329,47 @@ Use container names (not `localhost`) for inter-service communication:
 - Prowlarr: `prowlarr:9696`
 - Radarr: `radarr:7878`
 - Sonarr: `sonarr:8989`
+
+## MusicSeerr
+
+A lightweight music request UI that bypasses Lidarr's broken search by querying MusicBrainz directly.
+
+### Local Access
+- **URL**: http://localhost:3333
+
+### External Access (via ngrok)
+- **URL**: https://music-orb.ngrok.app
+
+### Features
+- Search artists and albums via MusicBrainz
+- One-click add to Lidarr with correct MBID
+- Shows existing library status
+- Works around Lidarr's broken search index
+
+### CLI Alternative
+```bash
+# Quick add (auto-selects first match)
+./scripts/lidarr-add-quick.sh "Artist Name"
+
+# Interactive (choose from results)
+./scripts/lidarr-add.sh "Artist Name"
+```
+
+## Maintenance Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/health-monitor.sh` | Check all services, VPN, disk usage |
+| `scripts/backup-configs.sh` | Backup all service configs |
+| `scripts/lidarr-diagnostics.sh` | Debug Lidarr metadata issues |
+| `scripts/lidarr-add.sh` | Interactive artist add via MusicBrainz |
+| `scripts/lidarr-add-quick.sh` | Non-interactive artist add |
+
+### Cron Setup (Optional)
+```bash
+# Health check every 15 min
+*/15 * * * * /path/to/pirate-orb/scripts/health-monitor.sh
+
+# Weekly backup (Sunday 3 AM)
+0 3 * * 0 /path/to/pirate-orb/scripts/backup-configs.sh
+```

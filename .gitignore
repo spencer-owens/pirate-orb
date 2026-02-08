@@ -66,3 +66,18 @@ pirate-orb.applescript
 
 # Ignore user-specific environment variables
 .env
+
+# qBittorrent runtime data
+/qbittorrent/config/qBittorrent/GeoDB/
+/qbittorrent/config/qBittorrent/BT_backup/
+/qbittorrent/config/qBittorrent/qBittorrent-data.conf
+
+# Whisparr backups
+/whisparr/config/Backups/
+
+# slskd runtime data
+/slskd/config/data/
+/slskd/config/logs/
+
+# Backups dir
+/backups/

@@ -1,0 +1,31 @@
+remote_configuration: true
+remote_file_management: true
+
+soulseek:
+  listen_port: 50300
+
+directories:
+  incomplete: /downloads/incomplete/soulseek
+  downloads: /downloads/complete/soulseek
+
+shares:
+  directories:
+    - /music-leviathan
+
+web:
+  authentication:
+    api_keys:
+      soularr:
+        key: SLSKD_API_KEY_REDACTED
+        role: readwrite
+
+integration:
+  scripts:
+    notify_lidarr:
+      on:
+        - DownloadDirectoryComplete
+      run:
+        executable: /bin/sh
+        arglist:
+          - -c
+          - 'wget -qO- --post-data="{\"name\":\"DownloadedAlbumsScan\",\"path\":\"/downloads/complete/soulseek\"}" --header="Content-Type: application/json" --header="X-Api-Key: LIDARR_API_KEY_REDACTED" "http://192.168.97.1:8686/api/v1/command" || true; sleep 30; find /downloads/complete/soulseek -type d -empty -delete 2>/dev/null || true'
