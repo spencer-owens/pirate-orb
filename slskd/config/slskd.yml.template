@@ -16,7 +16,7 @@ web:
   authentication:
     api_keys:
       soularr:
-        key: SLSKD_API_KEY_REDACTED
+        key: ${SLSKD_API_KEY}
         role: readwrite
 
 integration:
@@ -28,4 +28,4 @@ integration:
         executable: /bin/sh
         arglist:
           - -c
-          - 'wget -qO- --post-data="{\"name\":\"DownloadedAlbumsScan\",\"path\":\"/downloads/complete/soulseek\"}" --header="Content-Type: application/json" --header="X-Api-Key: LIDARR_API_KEY_REDACTED" "http://192.168.97.1:8686/api/v1/command" || true; sleep 30; find /downloads/complete/soulseek -type d -empty -delete 2>/dev/null || true'
+          - 'wget -qO- --post-data="{\"name\":\"DownloadedAlbumsScan\",\"path\":\"/downloads/complete/soulseek\"}" --header="Content-Type: application/json" --header="X-Api-Key: ${LIDARR_API_KEY}" "http://192.168.97.1:8686/api/v1/command" || true; sleep 30; find /downloads/complete/soulseek -type d -empty -delete 2>/dev/null || true'

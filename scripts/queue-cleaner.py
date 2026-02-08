@@ -177,7 +177,7 @@ def main():
     parser = argparse.ArgumentParser(description="Lidarr Queue Cleaner")
     parser.add_argument("--dry-run", action="store_true", help="Show what would happen without making changes")
     parser.add_argument("--lidarr-url", default=os.environ.get("LIDARR_URL", "http://localhost:8686"))
-    parser.add_argument("--api-key", default=os.environ.get("LIDARR_API_KEY", "LIDARR_API_KEY_REDACTED"))
+    parser.add_argument("--api-key", default=os.environ.get("LIDARR_API_KEY", ""))
     args = parser.parse_args()
 
     log.info(f"Lidarr Queue Cleaner starting (dry_run={args.dry_run})")
