@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-const MB_API = 'https://musicbrainz.org/ws/2';
-const USER_AGENT = 'MusicSeerr/1.0 (https://github.com/spencer-owens/pirate-orb)';
+import { searchArtists, searchReleaseGroups } from '@/lib/musicbrainz';
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -13,33 +11,9 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    let url: string;
-    
-    if (type === 'artist') {
-      url = `${MB_API}/artist/?query=artist:${encodeURIComponent(query)}&fmt=json&limit=10`;
-    } else {
-      // Album (release-group) search
-      url = `${MB_API}/release-group/?query=releasegroup:${encodeURIComponent(query)}&fmt=json&limit=10`;
-    }
-
-    const response = await fetch(url, {
-      headers: {
-        'User-Agent': USER_AGENT,
-        'Accept': 'application/json',
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`MusicBrainz API error: ${response.status}`);
-    }
-
-    const data = await response.json();
+    const data = type === 'artist' ? await searchArtists(query) : await searchReleaseGroups(query);
     return NextResponse.json(data);
-  } catch (error) {
-    console.error('Search error:', error);
-    return NextResponse.json(
-      { error: 'Failed to search MusicBrainz' },
-      { status: 500 }
-    );
+  } catch (error: any) {
+    return NextResponse.json({ error: 'Failed to search MusicBrainz' }, { status: 500 });
   }
 }

@@ -211,3 +211,16 @@ services:
     depends_on:
       - musicseerr
     restart: unless-stopped
+
+  threadfin:
+    image: fyb3roptik/threadfin:latest
+    container_name: threadfin
+    ports:
+      - 34400:34400
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ./threadfin/config:/home/threadfin/conf
+    restart: unless-stopped
