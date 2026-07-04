@@ -88,6 +88,8 @@ services:
       - ./jellyseerr/config:/app/config
     ports:
       - 5055:5055
+    extra_hosts:
+      - "192-168-1-216.068a474f24b24973b7adb328ec356400.plex.direct:192.168.1.112"
     restart: unless-stopped
 
   whisparr:
@@ -162,7 +164,9 @@ services:
     environment:
       - SLSKD_SLSK_USERNAME=${SLSKD_SLSK_USERNAME}
       - SLSKD_SLSK_PASSWORD=${SLSKD_SLSK_PASSWORD}
+      - SLSKD_SLSK_ADDRESS=208.76.170.59
       - SLSKD_REMOTE_CONFIGURATION=true
+      - SLSKD_HTTP_IP_ADDRESS=0.0.0.0
       - SLSKD_DOWNLOADS_DIR=/downloads/complete/soulseek
       - SLSKD_INCOMPLETE_DIR=/downloads/incomplete/soulseek
       - SLSKD_SHARED_DIR=/music-leviathan
@@ -211,6 +215,30 @@ services:
     depends_on:
       - musicseerr
     restart: unless-stopped
+
+  stash:
+    image: stashapp/stash:latest
+    container_name: stash
+    ports:
+      - 9999:9999
+    environment:
+      - STASH_STASH=/data/
+      - STASH_GENERATED=/generated/
+      - STASH_METADATA=/metadata/
+      - STASH_CACHE=/cache/
+      - STASH_PORT=9999
+    volumes:
+      - ./stash/config:/root/.stash
+      - /Volumes/Leviathan/XXX:/data/leviathan-xxx
+      - /Volumes/hal9000/XXX:/data/hal9000-xxx
+      - ./stash/generated:/generated
+      - ./stash/metadata:/metadata
+      - ./stash/cache:/cache
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
 
   threadfin:
     image: fyb3roptik/threadfin:latest

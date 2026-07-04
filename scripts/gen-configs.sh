@@ -18,4 +18,9 @@ echo "✅ soularr/config.ini"
 envsubst < slskd/config/slskd.yml.template > slskd/config/slskd.yml
 echo "✅ slskd/config/slskd.yml"
 
+# Generate Threadfin configs (IPTV creds)
+for t in threadfin/config/data/filtered_live.m3u threadfin/config/xepg.json threadfin/config/settings.json; do
+    [ -f "$t.template" ] && envsubst '${IPTV_HOST}${IPTV_USER}${IPTV_PASS}' < "$t.template" > "$t" && echo "✅ $t"
+done
+
 echo "Done. Generated configs are gitignored."

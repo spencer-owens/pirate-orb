@@ -86,3 +86,12 @@ pirate-orb.applescript
 
 # Backups dir
 /backups/
+# Threadfin: commit templates only; live configs carry IPTV creds (regen: scripts/gen-configs.sh)
+threadfin/*
+!threadfin/config/
+threadfin/config/*
+!threadfin/config/data/
+threadfin/config/data/*
+!threadfin/config/data/filtered_live.m3u.template
+!threadfin/config/xepg.json.template
+!threadfin/config/settings.json.template

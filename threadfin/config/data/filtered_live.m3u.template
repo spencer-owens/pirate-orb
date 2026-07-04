@@ -1,0 +1,199 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="cbs42keye.us" tvg-name="" tvg-chno="2" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cbs-logo-white-us.png" group-title="",CBS (KEYE)
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/517641.ts
+#EXTINF:-1 tvg-id="nbc36kxan.us" tvg-name="" tvg-chno="4" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nbc-us.png" group-title="",NBC (KXAN)
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/517965.ts
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-chno="5" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/ktla-5-us.png" group-title="",KTLA 5
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/517786.ts
+#EXTINF:-1 tvg-id="pbs13wnet.us" tvg-name="" tvg-chno="6" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/pbs-us.png" group-title="",PBS (KLRN)
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/648790.ts
+#EXTINF:-1 tvg-id="abckvue.us" tvg-name="" tvg-chno="7" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/abc-us.png" group-title="",ABC (KVUE)
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/517500.ts
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-chno="9" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/kcal-9-us.png" group-title="",KCAL 9
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/517581.ts
+#EXTINF:-1 tvg-id="fox7ktbc.us" tvg-name="" tvg-chno="11" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/fox-us.png" group-title="",FOX (KTBC)
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/517252.ts
+#EXTINF:-1 tvg-id="cnn.us" tvg-name="" tvg-chno="14" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cnn-us.png" group-title="",CNN
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/208973.ts
+#EXTINF:-1 tvg-id="espn.us" tvg-name="" tvg-chno="15" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/espn-us.png" group-title="",ESPN
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/226642.ts
+#EXTINF:-1 tvg-id="espn2.us" tvg-name="" tvg-chno="16" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/espn-2-us.png" group-title="",ESPN 2
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220407.ts
+#EXTINF:-1 tvg-id="fx.us" tvg-name="" tvg-chno="17" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/fx-us.png" group-title="",FX
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176033.ts
+#EXTINF:-1 tvg-id="tnt.us" tvg-name="" tvg-chno="18" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tnt-us.png" group-title="",TNT
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175952.ts
+#EXTINF:-1 tvg-id="usanetwork.us" tvg-name="" tvg-chno="19" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/usa-us.png" group-title="",USA Network
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175967.ts
+#EXTINF:-1 tvg-id="disneychannel.us" tvg-name="" tvg-chno="20" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/disney-channel-us.png" group-title="",Disney Channel
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176248.ts
+#EXTINF:-1 tvg-id="discoverychannel.us" tvg-name="" tvg-chno="21" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/discovery-channel-us.png" group-title="",Discovery
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/228296.ts
+#EXTINF:-1 tvg-id="historychannel.us" tvg-name="" tvg-chno="62" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/history-channel-us.png" group-title="",History
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175878.ts
+#EXTINF:-1 tvg-id="natgeo.us" tvg-name="" tvg-chno="23" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/national-geographic-us.png" group-title="",Nat Geo
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175899.ts
+#EXTINF:-1 tvg-id="discoveryscience.us" tvg-name="" tvg-chno="24" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/discovery-science-us.png" group-title="",Science Channel
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175833.ts
+#EXTINF:-1 tvg-id="smithsonianchannel.us" tvg-name="" tvg-chno="25" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/smithsonian-channel-us.png" group-title="",Smithsonian
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175930.ts
+#EXTINF:-1 tvg-id="natgeowild.us" tvg-name="" tvg-chno="26" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nat-geo-wild-us.png" group-title="",Nat Geo Wild
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175901.ts
+#EXTINF:-1 tvg-id="tbs.us" tvg-name="" tvg-chno="27" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tbs-us.png" group-title="",TBS
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175938.ts
+#EXTINF:-1 tvg-id="aande.us" tvg-name="" tvg-chno="28" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/a-and-e-us.png" group-title="",A&E
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175784.ts
+#EXTINF:-1 tvg-id="lifetimenetwork.us" tvg-name="" tvg-chno="29" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/lifetime-us.png" group-title="",Lifetime
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175891.ts
+#EXTINF:-1 tvg-id="tlc.us" tvg-name="" tvg-chno="30" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tlc-us.png" group-title="",TLC
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175946.ts
+#EXTINF:-1 tvg-id="foodnetwork.us" tvg-name="" tvg-chno="31" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/food-network-us.png" group-title="",Food Network
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175850.ts
+#EXTINF:-1 tvg-id="hgtv.us" tvg-name="" tvg-chno="32" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/hgtv-us.png" group-title="",HGTV
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175875.ts
+#EXTINF:-1 tvg-id="travel.us" tvg-name="" tvg-chno="33" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/travel-channel-us.png" group-title="",Travel Channel
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175958.ts
+#EXTINF:-1 tvg-id="syfy.us" tvg-name="" tvg-chno="34" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/syfy-us.png" group-title="",Syfy
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175933.ts
+#EXTINF:-1 tvg-id="freeform.us" tvg-name="" tvg-chno="35" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/freeform-us.png" group-title="",Freeform
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175852.ts
+#EXTINF:-1 tvg-id="bbcamerica.us" tvg-name="" tvg-chno="36" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/bbc-america-us.png" group-title="",BBC America
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/1846782.ts
+#EXTINF:-1 tvg-id="fxx.us" tvg-name="" tvg-chno="37" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/fxx-us.png" group-title="",FXX
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176039.ts
+#EXTINF:-1 tvg-id="cookingchannel.us" tvg-name="" tvg-chno="38" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cooking-channel-us.png" group-title="",Cooking Channel
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175816.ts
+#EXTINF:-1 tvg-id="foxnews.us" tvg-name="" tvg-chno="42" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/fox-news-us.png" group-title="",Fox News
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/1846754.ts
+#EXTINF:-1 tvg-id="msnbc.us" tvg-name="" tvg-chno="43" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/msnbc-us.png" group-title="",MSNBC
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/228579.ts
+#EXTINF:-1 tvg-id="cnbc.us" tvg-name="" tvg-chno="44" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cnbc-us.png" group-title="",CNBC
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/943540.ts
+#EXTINF:-1 tvg-id="newsnation.us" tvg-name="" tvg-chno="45" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/news-nation-us.png" group-title="",NewsNation
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175977.ts
+#EXTINF:-1 tvg-id="weatherchannel.us" tvg-name="" tvg-chno="46" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/weather-channel-us.png" group-title="",Weather Channel
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175945.ts
+#EXTINF:-1 tvg-id="cspan.us" tvg-name="" tvg-chno="47" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/c-span-1-us.png" group-title="",C-SPAN
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175983.ts
+#EXTINF:-1 tvg-id="bet.us" tvg-name="" tvg-chno="48" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/bet-us.png" group-title="",BET
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175801.ts
+#EXTINF:-1 tvg-id="mtv.us" tvg-name="" tvg-chno="49" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/mtv-us.png" group-title="",MTV
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/177081.ts
+#EXTINF:-1 tvg-id="vh1.us" tvg-name="" tvg-chno="50" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/vh1-us.png" group-title="",VH1
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/229001.ts
+#EXTINF:-1 tvg-id="mtv2.us" tvg-name="" tvg-chno="51" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/mtv-2-us.png" group-title="",MTV2
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/177084.ts
+#EXTINF:-1 tvg-id="paramountnetwork.us" tvg-name="" tvg-chno="52" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/paramount-network-us.png" group-title="",Paramount Network
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175914.ts
+#EXTINF:-1 tvg-id="mtvclassic.us" tvg-name="" tvg-chno="53" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/mtv-classic-us.png" group-title="",MTV Classic
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/177085.ts
+#EXTINF:-1 tvg-id="cmt.us" tvg-name="" tvg-chno="54" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cmt-us.png" group-title="",CMT
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/177079.ts
+#EXTINF:-1 tvg-id="tvlandeast.us" tvg-name="" tvg-chno="55" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tv-land-us.png" group-title="",TV Land
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175964.ts
+#EXTINF:-1 tvg-id="gameshownetwork.us" tvg-name="" tvg-chno="56" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/game-show-network-us.png" group-title="",GSN
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175863.ts
+#EXTINF:-1 tvg-id="bravo.us" tvg-name="" tvg-chno="58" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/bravo-us.png" group-title="",Bravo
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175805.ts
+#EXTINF:-1 tvg-id="eentertainment.us" tvg-name="" tvg-chno="59" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/e-entertainment-us.png" group-title="",E!
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175841.ts
+#EXTINF:-1 tvg-id="comedycentral.us" tvg-name="" tvg-chno="60" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/comedy-central-us.png" group-title="",Comedy Central
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175812.ts
+#EXTINF:-1 tvg-id="trutv.us" tvg-name="" tvg-chno="61" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tru-tv-us.png" group-title="",truTV
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175960.ts
+#EXTINF:-1 tvg-id="foxsports1.us" tvg-name="" tvg-chno="63" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/fox-sports-1-us.png" group-title="",Fox Sports 1
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220387.ts
+#EXTINF:-1 tvg-id="foxsports2.us" tvg-name="" tvg-chno="64" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/fox-sports-2-us.png" group-title="",Fox Sports 2
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220388.ts
+#EXTINF:-1 tvg-id="amc.us" tvg-name="" tvg-chno="65" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/amc-us.png" group-title="",AMC
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175787.ts
+#EXTINF:-1 tvg-id="tcm.us" tvg-name="" tvg-chno="66" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tcm-us.png" group-title="",TCM
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/784931.ts
+#EXTINF:-1 tvg-id="fxm.us" tvg-name="" tvg-chno="67" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/fxm-movie-channel-us.png" group-title="",FXM
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176036.ts
+#EXTINF:-1 tvg-id="independentfilmchannel.us" tvg-name="" tvg-chno="68" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/ifc-us.png" group-title="",IFC
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175880.ts
+#EXTINF:-1 tvg-id="sundancetv.us" tvg-name="" tvg-chno="69" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/sundance-tv-us.png" group-title="",Sundance
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176085.ts
+#EXTINF:-1 tvg-id="nickelodeon.us" tvg-name="" tvg-chno="70" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nickelodeon-us.png" group-title="",Nickelodeon
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176267.ts
+#EXTINF:-1 tvg-id="cartoonnetwork.us" tvg-name="" tvg-chno="71" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cartoon-network-us.png" group-title="",Cartoon Network
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176243.ts
+#EXTINF:-1 tvg-id="animalplanet.us" tvg-name="" tvg-chno="72" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/animal-planet-us.png" group-title="",Animal Planet
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175793.ts
+#EXTINF:-1 tvg-id="nickjr.us" tvg-name="" tvg-chno="73" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nick-jr-us.png" group-title="",Nick Jr
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176264.ts
+#EXTINF:-1 tvg-id="nicktoons.us" tvg-name="" tvg-chno="74" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nick-toons-us.png" group-title="",Nicktoons
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176266.ts
+#EXTINF:-1 tvg-id="teennick.us" tvg-name="" tvg-chno="75" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/teen-nick-us.png" group-title="",TeenNick
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176265.ts
+#EXTINF:-1 tvg-id="boomerang.us" tvg-name="" tvg-chno="76" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/boomerang-us.png" group-title="",Boomerang
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176238.ts
+#EXTINF:-1 tvg-id="disneyjunior.us" tvg-name="" tvg-chno="77" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/disney-jr-us.png" group-title="",Disney Jr
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176252.ts
+#EXTINF:-1 tvg-id="disneyxd.us" tvg-name="" tvg-chno="78" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/disney-xd-us.png" group-title="",Disney XD
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176257.ts
+#EXTINF:-1 tvg-id="pbskids.us" tvg-name="" tvg-chno="79" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/pbs-kids-dash-icon-us.png" group-title="",PBS Kids
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176263.ts
+#EXTINF:-1 tvg-id="nflnetwork.us" tvg-name="" tvg-chno="100" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nfl-network-us.png" group-title="",NFL Network
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176175.ts
+#EXTINF:-1 tvg-id="nflredzone.us" tvg-name="" tvg-chno="101" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nfl-red-zone-us.png" group-title="",NFL RedZone
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/177247.ts
+#EXTINF:-1 tvg-id="nbatv.us" tvg-name="" tvg-chno="102" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nba-tv-us.png" group-title="",NBA TV
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/395217.ts
+#EXTINF:-1 tvg-id="mlbnetwork.us" tvg-name="" tvg-chno="103" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/mlb-network-us.png" group-title="",MLB Network
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176144.ts
+#EXTINF:-1 tvg-id="nhlnetwork.us" tvg-name="" tvg-chno="104" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nhl-network-us.png" group-title="",NHL Network
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220464.ts
+#EXTINF:-1 tvg-id="espnu.us" tvg-name="" tvg-chno="105" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/espn-u-us.png" group-title="",ESPNU
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220412.ts
+#EXTINF:-1 tvg-id="espnnews.us" tvg-name="" tvg-chno="106" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/espnews-us.png" group-title="",ESPNews
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220410.ts
+#EXTINF:-1 tvg-id="cbssportsnetworkusa.us" tvg-name="" tvg-chno="107" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cbs-sports-network-us.png" group-title="",CBS Sports Network
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/176607.ts
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-chno="108" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nbc-sports-us.png" group-title="",NBC Sports
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/1383049.ts
+#EXTINF:-1 tvg-id="golfchannel.us" tvg-name="" tvg-chno="109" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nbc-golf-channel-us.png" group-title="",Golf Channel
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220424.ts
+#EXTINF:-1 tvg-id="tennischannel.us" tvg-name="" tvg-chno="110" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tennis-channel-us.png" group-title="",Tennis Channel
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220448.ts
+#EXTINF:-1 tvg-id="bigtennetwork.us" tvg-name="" tvg-chno="111" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/big-ten-network-us.png" group-title="",Big Ten Network
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220402.ts
+#EXTINF:-1 tvg-id="accnetwork.us" tvg-name="" tvg-chno="112" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/acc-network-us.png" group-title="",ACC Network
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220394.ts
+#EXTINF:-1 tvg-id="beinsports.us" tvg-name="" tvg-chno="113" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/bein-sports-us.png" group-title="",beIN Sports
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220512.ts
+#EXTINF:-1 tvg-id="beinsportsxtra.us" tvg-name="" tvg-chno="114" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/bein-sports-xtra-us.png" group-title="",beIN Sports Xtra
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/2770315.ts
+#EXTINF:-1 tvg-id="outdoorchannel.us" tvg-name="" tvg-chno="115" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/outdoor-channel-us.png" group-title="",Outdoor Channel
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175906.ts
+#EXTINF:-1 tvg-id="motortrend.us" tvg-name="" tvg-chno="116" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/motor-trend-us.png" group-title="",Motor Trend
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/175834.ts
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-chno="120" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/spectrum-sportsnet-la-us.png" group-title="",SportsNet Dodgers
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/1620759.ts
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-chno="121" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/spectrum-sportsnet-us.png" group-title="",SportsNet Lakers
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/397081.ts
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-chno="122" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/los-angeles-angels-us.png" group-title="",Angels ABTV
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220497.ts
+#EXTINF:-1 tvg-id="nbcsportsbayarea.us" tvg-name="" tvg-chno="123" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nbc-sports-us.png" group-title="",NBC Sports Bay Area
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/220425.ts
+#EXTINF:-1 tvg-id="skysportsmainevent.uk" tvg-name="" tvg-chno="150" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-sports-main-event-uk.png" group-title="",Sky Main Event
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/1847084.ts
+#EXTINF:-1 tvg-id="skysportspremiereleague.uk" tvg-name="" tvg-chno="151" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-sports-premier-league-uk.png" group-title="",Sky Premier League
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/1821337.ts
+#EXTINF:-1 tvg-id="skysportsfootball.uk" tvg-name="" tvg-chno="152" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-sports-football-uk.png" group-title="",Sky Football
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/1846775.ts
+#EXTINF:-1 tvg-id="skysportsf1.uk" tvg-name="" tvg-chno="153" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-sports-f1-uk.png" group-title="",Sky F1
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/1846774.ts
+#EXTINF:-1 tvg-id="skysportscricket.uk" tvg-name="" tvg-chno="154" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-sports-cricket-uk.png" group-title="",Sky Cricket
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/1769162.ts
+#EXTINF:-1 tvg-id="tntsports4.uk" tvg-name="" tvg-chno="155" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bt-sport-espn-uk.png" group-title="",TNT Sports
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/515737.ts
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-chno="156" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/international/rugby-pass-tv-int.png" group-title="",Rugby 1
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/591821.ts
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-chno="157" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/international/rugby-pass-tv-int.png" group-title="",Rugby 2
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/591822.ts
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-chno="158" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/international/f1-tv-int.png" group-title="",Motorsport 1
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/3045058.ts
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-chno="159" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/international/f1-tv-int.png" group-title="",Motorsport 2
+${IPTV_HOST}/live/${IPTV_USER}/${IPTV_PASS}/3048134.ts

@@ -1,0 +1,102 @@
+{
+  "api": false,
+  "authentication.api": false,
+  "authentication.m3u": false,
+  "authentication.pms": false,
+  "authentication.web": false,
+  "authentication.xml": false,
+  "backup.keep": 10,
+  "backup.path": "/home/threadfin/conf/backup/",
+  "git.branch": "MAIN",
+  "buffer": "ffmpeg",
+  "buffer.size.kb": 1024,
+  "buffer.timeout": 500,
+  "cache.images": true,
+  "epgSource": "XEPG",
+  "ffmpeg.options": "-hide_banner -loglevel error -fflags +nobuffer+discardcorrupt -probesize 1M -analyzeduration 1000000 -i [URL] -c copy -f mpegts pipe:1",
+  "ffmpeg.path": "/usr/bin/ffmpeg",
+  "ffmpeg.forceHttp": false,
+  "vlc.options": "-I dummy [URL] --sout #std{mux=ts,access=file,dst=-}",
+  "vlc.path": "/usr/bin/cvlc",
+  "files": {
+    "hdhr": {},
+    "m3u": {
+      "MXI4FGO70E4R8LYG094Z": {
+        "buffer": "ffmpeg",
+        "compatibility": {
+          "group.title": 0,
+          "stream.id": 100,
+          "streams": 99,
+          "tvg.id": 100
+        },
+        "counter.download": 177,
+        "counter.error": 0,
+        "description": "",
+        "file.source": "/home/threadfin/conf/data/filtered_live.m3u",
+        "file.threadfin": "MXI4FGO70E4R8LYG094Z.m3u",
+        "http_headers.origin": "",
+        "http_headers.referer": "",
+        "http_proxy.ip": "",
+        "http_proxy.port": "",
+        "id.provider": "MXI4FGO70E4R8LYG094Z",
+        "last.update": "2026-07-04 17:32:37",
+        "name": "Xtreme HD IPTV",
+        "provider.availability": 100,
+        "tuner": 5,
+        "type": "m3u"
+      }
+    },
+    "xmltv": {
+      "XTREME_EPG": {
+        "compatibility": {
+          "xmltv.channels": 4775,
+          "xmltv.programs": 56825
+        },
+        "counter.download": 7,
+        "counter.error": 0,
+        "description": "",
+        "file.source": "${IPTV_HOST}/xmltv.php?username=${IPTV_USER}&password=${IPTV_PASS}",
+        "file.threadfin": "XTREME_EPG.xml",
+        "http_proxy.ip": "",
+        "http_proxy.port": "",
+        "id.provider": "XTREME_EPG",
+        "last.update": "2026-07-04 17:32:41",
+        "name": "Xtreme HD EPG",
+        "provider.availability": 100,
+        "type": "xmltv"
+      }
+    }
+  },
+  "files.update": true,
+  "filter": {},
+  "language": "en",
+  "log.entries.ram": 500,
+  "m3u8.adaptive.bandwidth.mbps": 10,
+  "mapping.first.channel": 1000,
+  "port": "34400",
+  "ssdp": true,
+  "temp.path": "/tmp/threadfin/",
+  "tuner": 3,
+  "update": [
+    "0000"
+  ],
+  "user.agent": "Threadfin",
+  "uuid": "2026-02-2RQC-SBGO5C",
+  "udpxy": "",
+  "version": "0.5.0",
+  "xepg.replace.missing.images": true,
+  "xepg.replace.channel.title": false,
+  "ThreadfinAutoUpdate": false,
+  "storeBufferInRAM": true,
+  "forceHttps": false,
+  "httpsPort": 443,
+  "bindIpAddress": "",
+  "httpsThreadfinDomain": "",
+  "httpThreadfinDomain": "localhost:34400",
+  "enableNonAscii": false,
+  "epgCategories": "Kids:kids|News:news|Movie:movie|Series:series|Sports:sports",
+  "epgCategoriesColors": "kids:mediumpurple|news:tomato|movie:royalblue|series:gold|sports:yellowgreen",
+  "dummy": false,
+  "dummyChannel": "",
+  "ignoreFilters": true
+}
