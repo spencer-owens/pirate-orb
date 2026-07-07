@@ -76,10 +76,25 @@ def main():
     chnos = get_channel_numbers()
     print(f"  {len(chnos)} channel numbers from Threadfin")
     
-    # Download fresh EPG
+    # Download fresh EPG (provider flakes ~6AM sometimes: retry with backoff,
+    # unique tmp path, and verify we actually got a plausible file)
     print("  Downloading fresh EPG from provider...")
-    tmp = "/tmp/fresh_epg.xml"
-    urllib.request.urlretrieve(EPG_URL, tmp)
+    import tempfile, time
+    fd, tmp = tempfile.mkstemp(prefix="fresh_epg_", suffix=".xml")
+    os.close(fd)
+    last_err = None
+    for attempt in range(1, 4):
+        try:
+            urllib.request.urlretrieve(EPG_URL, tmp)
+            if os.path.exists(tmp) and os.path.getsize(tmp) > 1_000_000:
+                break
+            last_err = f"download produced {'no file' if not os.path.exists(tmp) else f'{os.path.getsize(tmp)} bytes (too small)'}"
+        except Exception as e:
+            last_err = str(e)
+        print(f"  attempt {attempt}/3 failed: {last_err}")
+        time.sleep(30 * attempt)
+    else:
+        raise SystemExit(f"EPG download failed after 3 attempts: {last_err}")
     size_mb = os.path.getsize(tmp) / 1024 / 1024
     print(f"  Downloaded: {size_mb:.1f} MB")
     
