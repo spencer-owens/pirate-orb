@@ -86,6 +86,32 @@ def search_album(base_url, api_key, album_ids):
     api(base_url, api_key, "POST", "command", body)
 
 
+def attempt_clean_import(base_url, api_key, download_id, label):
+    """Try a scripted manual import: only files that map cleanly (no rejections)
+    to artist+album+tracks. Returns imported file count, or 0."""
+    cands = api(base_url, api_key, "GET",
+                f"manualimport?downloadId={download_id}&filterExistingFiles=true")
+    if not cands or not isinstance(cands, list):
+        return 0
+    files = []
+    for c in cands:
+        if isinstance(c, dict) and c.get("artist") and c.get("album") and c.get("tracks") \
+           and not c.get("rejections"):
+            files.append({
+                "path": c["path"], "artistId": c["artist"]["id"],
+                "albumId": c["album"]["id"], "albumReleaseId": c["albumReleaseId"],
+                "trackIds": [t["id"] for t in c["tracks"]],
+                "quality": c["quality"], "downloadId": download_id,
+                "disableReleaseSwitching": False,
+            })
+    if not files:
+        return 0
+    api(base_url, api_key, "POST", "command",
+        {"name": "ManualImport", "files": files, "importMode": "move"})
+    log.info(f"    📥 clean manual import: {len(files)} files ({label})")
+    return len(files)
+
+
 def process_queue(base_url, api_key, dry_run=False):
     """Main queue processing loop."""
     queue = api(base_url, api_key, "GET", "queue?page=1&pageSize=100&includeArtist=true&includeAlbum=true")
@@ -98,6 +124,7 @@ def process_queue(base_url, api_key, dry_run=False):
 
     rejects = []
     approvals = []
+    imported = []
 
     for record in queue.get("records", []):
         rid = record["id"]
@@ -140,9 +167,25 @@ def process_queue(base_url, api_key, dry_run=False):
             rejects.append({"id": rid, "album_id": album_id, "label": label, "reason": f"incomplete ({audio_count} files vs {expected} expected)", "blocklist": True})
             continue
 
-        # Rule 3: Within tolerance — could force import
+        # Rule 3: Within tolerance — try clean manual import, else escalate.
         log.info(f"    ✅ ACCEPTABLE — {audio_count} files for {expected}-track album (ratio {ratio:.1f}x)")
-        approvals.append({"id": rid, "album_id": album_id, "label": label, "ratio": ratio})
+        download_id = record.get("downloadId")
+        if dry_run or not download_id:
+            approvals.append({"id": rid, "album_id": album_id, "label": label, "ratio": ratio})
+            continue
+        if attempt_clean_import(base_url, api_key, download_id, label):
+            imported.append(label)
+        else:
+            # Complete download that Lidarr can't cleanly map (wrong edition /
+            # bad tags / not-an-upgrade): blocklist + re-search a better release.
+            msgs = json.dumps(record.get("statusMessages", []))
+            if "Not an upgrade" in msgs:
+                log.info("    🗑  removing (existing copy is better; no re-search)")
+                remove_from_queue(base_url, api_key, rid, blocklist=True)
+            else:
+                log.info("    🗑  unmappable — blocklist + re-search")
+                rejects.append({"id": rid, "album_id": album_id, "label": label,
+                                "reason": "complete but unimportable (bad match/tags)", "blocklist": True})
 
     # Execute rejections
     if rejects:
@@ -161,7 +204,11 @@ def process_queue(base_url, api_key, dry_run=False):
     else:
         log.info("No items to reject")
 
-    # Report approvals (force import could be added later)
+    # Report
+    if imported:
+        log.info(f"\n--- {len(imported)} items imported via clean manual import ---")
+        for l in imported:
+            log.info(f"  📥 {l}")
     if approvals:
         log.info(f"\n--- {len(approvals)} items within tolerance (manual import recommended) ---")
         for a in approvals:
@@ -170,7 +217,7 @@ def process_queue(base_url, api_key, dry_run=False):
     if dry_run:
         log.info("\n🏜️  DRY RUN — no changes made")
 
-    return {"rejected": len(rejects), "acceptable": len(approvals)}
+    return {"rejected": len(rejects), "acceptable": len(approvals), "imported": len(imported)}
 
 
 def main():
@@ -183,7 +230,7 @@ def main():
     log.info(f"Lidarr Queue Cleaner starting (dry_run={args.dry_run})")
     result = process_queue(args.lidarr_url, args.api_key, args.dry_run)
     if result:
-        log.info(f"Done: {result['rejected']} rejected, {result['acceptable']} acceptable")
+        log.info(f"Done: {result['rejected']} rejected, {result['imported']} imported, {result['acceptable']} left for manual review")
 
 
 if __name__ == "__main__":
