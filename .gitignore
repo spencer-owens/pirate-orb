@@ -80,7 +80,7 @@ pirate-orb.applescript
 /slskd/config/logs/
 
 # Generated configs (contain secrets — use templates + gen-configs.sh)
-/soularr/config.ini
+/soularr/data/
 /slskd/config/slskd.yml
 /sabnzbd/config/sabnzbd.ini
 
