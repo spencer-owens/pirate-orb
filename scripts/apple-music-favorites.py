@@ -351,10 +351,81 @@ def backfill(limit: int) -> None:
           f"{n_unres} unresolved, {len(by_album) - len(done)} albums remaining")
 
 
+def star_backfill(dry_run: bool = False) -> None:
+    """Retroactively 5-star every track-level Apple Music favorite that exists
+    in Plex. This applies the trigger-track pattern to ALL albums the pipeline
+    (or anything else) already landed — not just post-feature requests.
+    Only touches tracks with NO existing rating (never clobbers manual stars)."""
+    out = osascript(f'''
+    with timeout of 600 seconds
+    tell application "Music"
+        set res to ""
+        repeat with t in (every track of library playlist 1 whose favorited is true)
+            set res to res & (artist of t) & "{SEP}" & (album of t) & "{SEP}" & (name of t) & linefeed
+        end repeat
+        return res
+    end tell
+    end timeout''')
+    favs = []
+    for line in out.splitlines():
+        parts = line.split(SEP)
+        if len(parts) == 3 and parts[0].strip():
+            favs.append(tuple(p.strip() for p in parts))
+    favs = sorted(set(favs))
+    print(f"{len(favs)} track-level favorites in Apple Music")
+
+    starred = already = missing = 0
+    missing_list = []
+    for artist, album, track in favs:
+        try:
+            data = plex_get(f"/library/sections/{PLEX_MUSIC_SECTION}/all",
+                            {"type": "10", "title": track})
+        except Exception as e:
+            print(f"PLEX LOOKUP FAILED: {artist} — {track}: {e}", file=sys.stderr)
+            continue
+        hit = None
+        for m in data.get("MediaContainer", {}).get("Metadata", []):
+            if _norm(m.get("grandparentTitle", "")) == _norm(artist) \
+               and _norm(m.get("title", "")) == _norm(track):
+                hit = m
+                break
+        if hit is None:
+            missing += 1
+            missing_list.append(f"{artist} — {track}  [album: {album}]")
+            continue
+        if hit.get("userRating") is not None:
+            already += 1
+            continue
+        if not dry_run:
+            qs = urllib.parse.urlencode({
+                "identifier": "com.plexapp.plugins.library", "key": hit["ratingKey"],
+                "rating": "10", "X-Plex-Token": _plex_token()})
+            req = urllib.request.Request(f"{PLEX}/:/rate?{qs}", method="PUT")
+            with urllib.request.urlopen(req, timeout=30):
+                pass
+        starred += 1
+        print(f"{'WOULD STAR' if dry_run else 'RATED ★★★★★'}: {artist} — {track}")
+
+    (HERE / ".apple-music-favorites-not-in-plex.txt").write_text(
+        "\n".join(missing_list) + "\n" if missing_list else "")
+    print(f"\ndone: {starred} {'would be ' if dry_run else ''}starred, "
+          f"{already} already had a rating (untouched), {missing} not in Plex "
+          f"(list: .apple-music-favorites-not-in-plex.txt)")
+
+
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--backfill", type=int, metavar="N",
                     help="request up to N albums from the existing-favorites baseline")
+    ap.add_argument("--star-backfill", action="store_true",
+                    help="5-star every Apple Music track-favorite that exists in Plex")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="with --star-backfill: report without rating")
     args = ap.parse_args()
-    backfill(args.backfill) if args.backfill else main()
+    if args.star_backfill:
+        star_backfill(dry_run=args.dry_run)
+    elif args.backfill:
+        backfill(args.backfill)
+    else:
+        main()
